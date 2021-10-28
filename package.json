@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {},
   "keywords": [],
-  "author": "",
-  "license": "",
+  "author": "lip8up",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "miniprogram-api-typings": "^3.4.3"

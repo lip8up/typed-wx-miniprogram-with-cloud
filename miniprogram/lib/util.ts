@@ -1,3 +1,8 @@
+const formatNumber = (n: number) => {
+  const s = n.toString()
+  return s[1] ? s : '0' + s
+}
+
 export const formatTime = (date: Date) => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -13,7 +18,12 @@ export const formatTime = (date: Date) => {
   )
 }
 
-const formatNumber = (n: number) => {
-  const s = n.toString()
-  return s[1] ? s : '0' + s
+export const callFunction = async (functionName: string, args?: any) => {
+  return wx.cloud.callFunction({
+    name: 'airead',
+    data: {
+      functionName,
+      ...args
+    }
+  })
 }

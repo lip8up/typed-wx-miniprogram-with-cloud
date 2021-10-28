@@ -1,5 +1,7 @@
-// index.ts
+import { getOpenId } from '../../lib/cloud'
+
 // 获取应用实例
+// @ts-ignore
 const app = getApp<IAppOption>()
 
 Page({
@@ -16,6 +18,10 @@ Page({
     wx.navigateTo({
       url: '../logs/logs',
     })
+  },
+  async callCloud() {
+    const data = await getOpenId()
+    console.log(data)
   },
   onLoad() {
     // @ts-ignore

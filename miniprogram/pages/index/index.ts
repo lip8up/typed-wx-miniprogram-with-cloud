@@ -1,4 +1,4 @@
-import { getOpenId, sum } from '../../lib/cloud'
+import cloud, { cloudGetOpenId, cloudSum } from '../../lib/cloud'
 
 // 获取应用实例
 // @ts-ignore
@@ -6,7 +6,9 @@ const app = getApp<IAppOption>()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: 'Hi, 微信小程序😝',
+    console: '',
+    loading: false,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -20,9 +22,24 @@ Page({
     })
   },
   async callCloud() {
-    const data = await getOpenId()
-    const xx = await sum(0.1, 0.2)
-    console.log(data.appid, data.env, xx)
+    this.setData({ loading: true })
+    try {
+      const startTime = Date.now()
+      const { appid, env } = await cloudGetOpenId()
+      const sum = await cloudSum(0.1, 0.2)
+      this.setData({
+        console: await cloud.format({
+          time: new Date().toLocaleString(),
+          span: Date.now() - startTime,
+          appid,
+          env,
+          sum,
+          long: '谢谢谢谢谢寻沙发沙发上水电费水电费所发生的分身大师的地方😝'
+        })
+      })
+    } finally {
+      this.setData({ loading: false })
+    }
   },
   onLoad() {
     // @ts-ignore

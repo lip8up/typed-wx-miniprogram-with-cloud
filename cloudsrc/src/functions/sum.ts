@@ -1,3 +1,3 @@
-export default async (a: number, b: number) => {
+export default (a: number, b: number) => {
   return a + b
 }

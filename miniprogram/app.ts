@@ -6,7 +6,7 @@ App<IAppOption>({
 
     wx.cloud.init({
       env: 'airead-888',
-      traceUser: true,
+      traceUser: true
     })
 
     // 展示本地存储能力

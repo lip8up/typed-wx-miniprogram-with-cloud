@@ -8,8 +8,8 @@
       <open-data type="userNickName"></open-data>
     </block>
     <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">获取头像昵称</button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
       <view wx:else> 请使用1.4.4及以上版本基础库 </view>
     </block>
     <block wx:else>
@@ -17,7 +17,11 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+
   <view class="usermotto">
-    <text class="user-motto" bind:tap="callCloud">{{motto}}</text>
+    <text class="user-motto">{{motto}}</text>
   </view>
+
+  <button type="primary" bind:tap="callCloud" class="btn-call-cloud" disabled="{{loading}}">调用云函数</button>
+  <text class="console" space="ensp">{{console}}</text>
 </view>

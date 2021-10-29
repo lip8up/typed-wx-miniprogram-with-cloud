@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import cloud from 'wx-server-sdk'
+import format from './functions/format'
 import getOpenId from './functions/getOpenId'
 import sum from './functions/sum'
 
@@ -10,10 +11,12 @@ cloud.init({
 
 export const main = async (event: any, context: any) => {
   switch (event.functionName) {
+    case 'format':
+      return format(event.object)
     case 'getOpenId':
-      return await getOpenId()
+      return getOpenId()
     case 'sum':
-      return await sum(event.a, event.b)
+      return sum(event.a, event.b)
     default:
       throw new Error(`no such function ${event.functionName}`)
   }

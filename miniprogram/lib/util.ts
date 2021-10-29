@@ -17,13 +17,3 @@ export const formatTime = (date: Date) => {
     [hour, minute, second].map(formatNumber).join(':')
   )
 }
-
-export const callFunction = async (functionName: string, args?: any) => {
-  return wx.cloud.callFunction({
-    name: 'airead',
-    data: {
-      functionName,
-      ...args
-    }
-  })
-}

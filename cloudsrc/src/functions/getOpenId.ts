@@ -1,6 +1,6 @@
 import cloud from 'wx-server-sdk'
 
-export default async () => {
+export default () => {
   // 获取基础信息
   const wxContext = cloud.getWXContext()
 

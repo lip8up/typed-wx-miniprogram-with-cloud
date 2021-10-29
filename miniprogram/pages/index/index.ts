@@ -1,4 +1,4 @@
-import { getOpenId } from '../../lib/cloud'
+import { getOpenId, sum } from '../../lib/cloud'
 
 // 获取应用实例
 // @ts-ignore
@@ -21,7 +21,8 @@ Page({
   },
   async callCloud() {
     const data = await getOpenId()
-    console.log(data)
+    const xx = await sum(0.1, 0.2)
+    console.log(data.appid, data.env, xx)
   },
   onLoad() {
     // @ts-ignore

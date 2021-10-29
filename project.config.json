@@ -5,7 +5,7 @@
   },
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "cloudfunctionTemplateRoot": "cloudfunctions/.template",
   "compileType": "miniprogram",
   "libVersion": "2.15.0",
   "projectname": "airead",

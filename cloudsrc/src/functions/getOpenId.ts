@@ -1,11 +1,6 @@
 import cloud from 'wx-server-sdk'
 
-cloud.init({
-  // @ts-ignore
-  env: cloud.DYNAMIC_CURRENT_ENV
-})
-
-export const main = async (event: any, context: any) => {
+export default async () => {
   // 获取基础信息
   const wxContext = cloud.getWXContext()
 

@@ -8,6 +8,7 @@
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "miniprogram-api-typings": "^3.4.3"
+    "miniprogram-api-typings": "^3.4.4",
+    "wx-server-sdk": "^2.5.3"
   }
 }

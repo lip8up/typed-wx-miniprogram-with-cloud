@@ -1,15 +1,13 @@
 // app.ts
 App<IAppOption>({
   globalData: {},
-  onLaunch() {
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        env: 'airead-888',
-        traceUser: true,
-      })
-    }
+  async onLaunch() {
+    console.log('=> onLaunch')
+
+    wx.cloud.init({
+      env: 'airead-888',
+      traceUser: true,
+    })
 
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
@@ -17,11 +15,7 @@ App<IAppOption>({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        console.log(res.code)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })    
+    const res = await wx.login()
+    console.log('wx.login success', res.code)
   }
 })

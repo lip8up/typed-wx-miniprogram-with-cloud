@@ -21,7 +21,13 @@
       "node_modules/@types",
       "node_modules/miniprogram-api-typings/types",
       "typings"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@cloud/*": [
+        "cloudsrc/src/*"
+      ]
+    }
   },
   "include": [
     "./**/*.ts"

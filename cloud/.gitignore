@@ -1,1 +1,3 @@
 coverage
+/build/*
+!/build/README.md

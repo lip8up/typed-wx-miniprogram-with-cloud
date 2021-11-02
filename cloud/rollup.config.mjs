@@ -65,6 +65,6 @@ const generateConfig = (
   })
 }
 
-const config = generateConfig('src/functions', 'functions')
+const config = generateConfig('src/functions', 'build')
 
 export default config

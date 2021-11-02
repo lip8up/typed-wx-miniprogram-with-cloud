@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf 'functions/[!README]*'",
-    "build": "yarn clean && node --experimental-json-modules ./node_modules/.bin/rollup -c",
+    "build": "yarn clean && node --no-warnings --experimental-json-modules ./node_modules/.bin/rollup -c",
     "watch": "yarn build -w",
     "lint": "eslint src",
     "test": "jest"

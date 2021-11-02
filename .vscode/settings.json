@@ -1,6 +1,6 @@
 {
   "eslint.workingDirectories": [
     ".",
-    "cloudsrc"
+    "cloud"
   ]
 }

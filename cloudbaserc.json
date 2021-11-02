@@ -1,0 +1,5 @@
+{
+  "envId": "airead-888",
+  "functionRoot": "./cloud/functions",
+  "functions": []
+}

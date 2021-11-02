@@ -10,7 +10,6 @@
     "experimentalDecorators": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "alwaysStrict": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -25,7 +24,7 @@
     "baseUrl": ".",
     "paths": {
       "@cloud/*": [
-        "cloudsrc/src/*"
+        "cloud/src/*"
       ]
     }
   },

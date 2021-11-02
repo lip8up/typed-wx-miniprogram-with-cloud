@@ -4,10 +4,9 @@
   "author": "lip8up <lip8up@qq.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf ../cloudfunctions/airead",
-    "build": "sh build.sh",
-    "localdev": "cd ../cloudfunctions/airead/ && yarn install --prod ; cd -",
-    "watch": "npx tsc -p tsconfig-build.json -w",
+    "clean": "rimraf 'functions/[!README]*'",
+    "build": "yarn clean && node --experimental-json-modules ./node_modules/.bin/rollup -c",
+    "watch": "yarn build -w",
     "lint": "eslint src",
     "test": "jest"
   },
@@ -15,6 +14,8 @@
     "wx-server-sdk": "^2.5.3"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@types/comment-json": "^2.4.2",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
@@ -25,11 +26,13 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsdoc": "^36.1.0",
+    "globby": "^12.0.2",
     "jest": "^27.2.5",
     "jest-extended": "^1.0.0",
     "jest-extended-global-fail-pass": "^1.8.8",
     "lint-staged": "^11.1.2",
     "rimraf": "^3.0.2",
+    "rollup": "^2.58.3",
     "ts-jest": "^27.0.5",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3",

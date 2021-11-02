@@ -1,2 +1,3 @@
-1. 函数应分开自动生成，而不是通过 event.functionName 集中调用
-2. miniprogram/lib/cloud.ts 应自动生成，使用 babel 编译器
+0. 插件单元测试
+1. 撰写插件文档
+2. 撰写小程序示例文档

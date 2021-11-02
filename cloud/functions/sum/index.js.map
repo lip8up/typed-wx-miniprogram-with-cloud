@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sources":["../../src/functions/sum.ts"],"sourcesContent":["export default (a: number, b: number) => {\n  return a + b\n}\n"],"names":[],"mappings":";;;;;;;;;;;;kBAAe,CAAC,CAAS,EAAE,CAAS;IAClC,OAAO,CAAC,GAAG,CAAC,CAAA;AACd,CAAC;;;2BAFe,SAAW;;;;;"}

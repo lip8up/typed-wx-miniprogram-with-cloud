@@ -4,8 +4,8 @@
     "ignore": []
   },
   "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": "cloudfunctions/",
-  "cloudfunctionTemplateRoot": "cloudfunctions/.template",
+  "cloudfunctionRoot": "cloud/functions/",
+  "cloudfunctionTemplateRoot": "cloud/functions/.template",
   "compileType": "miniprogram",
   "libVersion": "2.15.0",
   "projectname": "airead",

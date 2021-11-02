@@ -31,6 +31,6 @@ export default {
   collectCoverageFrom: [
     "src/**/*.ts",
     "!**/*.d.ts",
-    "!**/index.ts",
+    "!src/functions/**/index.ts",
   ]
 }

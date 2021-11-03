@@ -4,13 +4,16 @@
   "author": "lip8up <lip8up@qq.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf 'functions/[!README]*'",
+    "clean": "rimraf 'build/[!README]*'",
     "build": "yarn clean && node --no-warnings --experimental-json-modules ./node_modules/.bin/rollup -c",
     "watch": "yarn build -w",
     "lint": "eslint src",
     "test": "jest"
   },
   "dependencies": {
+    "abort-controller": "^3.0.0",
+    "iconv-lite": "^0.6.3",
+    "node-fetch": "^3.0.0",
     "wx-server-sdk": "^2.5.3"
   },
   "devDependencies": {

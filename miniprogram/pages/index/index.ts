@@ -1,4 +1,4 @@
-import cloud, { cloudGetOpenId, cloudSum } from '../../lib/cloud'
+import cloud, { cloudContext, cloudSum } from '../../lib/cloud'
 
 // 获取应用实例
 // @ts-ignore
@@ -25,16 +25,14 @@ Page({
     this.setData({ loading: true })
     try {
       const startTime = Date.now()
-      const { appid, env } = await cloudGetOpenId()
+      const context = await cloudContext()
       const sum = await cloudSum(0.1, 0.2)
       this.setData({
         console: await cloud.format({
-          time: new Date().toLocaleString(),
-          span: Date.now() - startTime,
-          appid,
-          env,
-          sum,
-          long: '谢谢谢谢谢寻沙发沙发上水电费水电费所发生的分身大师的地方😝'
+          now: new Date().toLocaleString(),
+          timeUse: Date.now() - startTime,
+          context,
+          sum
         })
       })
     } finally {

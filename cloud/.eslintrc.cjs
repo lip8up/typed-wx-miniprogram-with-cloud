@@ -122,6 +122,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['warn', { ignoreTypeValueShadow: true }],
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/require-await': 'off',
+    '@typescript-eslint/prefer-regexp-exec': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { vars: 'all', args: 'none' }],
     'arrow-parens': ['warn', 'as-needed'],
     'comma-dangle': 'off',

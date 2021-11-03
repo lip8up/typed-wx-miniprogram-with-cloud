@@ -15,7 +15,7 @@ const {
 } = createTransformerAndPlugin({
   packageOptions: {
     version: pkg.version,
-    description: pkg.dependencies,
+    description: pkg.description,
     author: pkg.author,
     license: pkg.license
   },

@@ -11,7 +11,13 @@
 
 ## 初始化
 
-建议你从 clone 我的代码开始。
+建议你从 fork 我的代码开始，该工程的源在：
+
+https://github.com/lip8up/typed-wx-miniprogram-with-cloud
+
+镜像在：
+
+https://gitee.com/lip8up/typed-wx-miniprogram-with-cloud
 
 ## 目录结构
 

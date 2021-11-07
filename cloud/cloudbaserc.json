@@ -1,0 +1,33 @@
+{
+  "envId": "airead-888",
+  "functionRoot": "./build",
+  "functions": [
+    {
+      "name": "context",
+      "timeout": 6,
+      "runtime": "Nodejs12.16",
+      "installDependency": true,
+      "envVariables": {
+        "NODE_OPTIONS": "--experimental-modules"
+      }
+    },
+    {
+      "name": "format",
+      "timeout": 6,
+      "runtime": "Nodejs12.16",
+      "installDependency": true
+    },
+    {
+      "name": "sum",
+      "timeout": 6,
+      "runtime": "Nodejs12.16",
+      "installDependency": true
+    },
+    {
+      "name": "transfer",
+      "timeout": 16,
+      "runtime": "Nodejs12.16",
+      "installDependency": true
+    }
+  ]
+}

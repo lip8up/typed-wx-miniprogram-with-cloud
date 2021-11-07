@@ -1,16 +1,14 @@
 import { fetchHtml } from '@/lib/fetch'
+import cheerio from 'cheerio'
 
 export default async (url: string) => {
-  const body = url ? await fetchHtml(url) : ''
-
-  console.log(body)
+  const html = url ? await fetchHtml(url) : ''
+  const q = cheerio.load(html)
+  const title = q('title').text()
+  const description = q('meta[name="description"]').attr().content
 
   return {
-    statusCode: 200,
-    headers: {
-      'Content-Type': 'text/plain',
-      'Access-Control-Allow-Origin': '*',
-    },
-    body: body || url,
+    title,
+    description
   }
 }

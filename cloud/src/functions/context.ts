@@ -6,5 +6,6 @@ export async function main(event: any, context: any) {
     event,
     context,
     wxContext: cloud.getWXContext(),
+    env: process.env
   }
 }

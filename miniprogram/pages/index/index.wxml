@@ -19,7 +19,7 @@
   </view>
 
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="motto-text">{{motto}}</text>
   </view>
 
   <button type="primary" bind:tap="callCloud" class="btn-call-cloud" disabled="{{loading}}">调用云函数</button>

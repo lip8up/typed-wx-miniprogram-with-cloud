@@ -5,8 +5,8 @@ import { join, resolve } from 'path'
 import { createTransformerAndPlugin } from 'rollup-plugin-wx-cloud'
 import pkg from './package.json'
 
-const devDeps = Object.keys(pkg.devDependencies || {})
-const deps = Object.keys(pkg.dependencies || {}).concat(devDeps)
+const allDependencies = { ...pkg.devDependencies, ...pkg.dependencies }
+const deps = Object.keys(allDependencies)
 
 const {
   wxCloudTransformer,
@@ -19,15 +19,27 @@ const {
     author: pkg.author,
     license: pkg.license
   },
-  allDependencies: { ...pkg.devDependencies, ...pkg.dependencies },
-  clientFilePath: resolve('../miniprogram/lib/cloud.ts')
+  allDependencies,
+  clientFilePath: resolve('../miniprogram/lib/cloud.ts'),
+  configFilePath: resolve('cloudbaserc.json'),
+  functionDeploy: {
+    context: {
+      envVariables: {
+        // 该变量并不能导致服务器使用 node --experimental-modules 运行你的函数，只是增加了一个普通的环境变量
+        NODE_OPTIONS: '--experimental-modules'
+      }
+    },
+    transfer: {
+      timeout: 16
+    }
+  }
 })
 
 /** @type {import('rollup').RollupOptions} */
 const commonConfig = {
   external: (name, fpath) => /node_modules/.test(fpath || '') || deps.includes(name),
   plugins: [
-    nodeResolve(),
+    nodeResolve({ preferBuiltins: true }),
     typescript({
       tsconfig: resolve('./tsconfig.json'),
       transformers: {

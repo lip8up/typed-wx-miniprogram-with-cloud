@@ -3,3 +3,4 @@ jest.config.mjs
 prettier.config.cjs
 rollup.config.mjs
 tests
+build

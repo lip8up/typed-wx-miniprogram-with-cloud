@@ -1,8 +1,7 @@
 import cloud, { cloudContext, cloudSum } from '../../lib/cloud'
 
 // 获取应用实例
-// @ts-ignore
-const app = getApp<IAppOption>()
+// const app = getApp<IAppOption>()
 
 Page({
   data: {
@@ -27,13 +26,15 @@ Page({
       const startTime = Date.now()
       const context = await cloudContext()
       const sum = await cloudSum(0.1, 0.2)
+      const baidu = await cloud.transfer('https://baidu.com')
       this.setData({
-        console: await cloud.format({
-          now: new Date().toLocaleString(),
+        console: await cloud.format(JSON.stringify({
+          time: new Date(),
           timeUse: Date.now() - startTime,
           context,
-          sum
-        })
+          sum,
+          baidu
+        }))
       })
     } finally {
       this.setData({ loading: false })

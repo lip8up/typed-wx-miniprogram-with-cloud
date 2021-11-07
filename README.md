@@ -297,9 +297,9 @@ cloudSum(0.1, 0.2).then(sum => console.log({ sum }))
 
 <img src="assets/04-return-hint.png" alt="cloudSum 返回值提示" width="50%">
 
-你以为只有这些？看视频：
+你以为只有这些？看动画：
 
-<video src="assets/05-goto.mp4" autoplay loop width="100%">
+<img src="assets/05-goto.png" width="100%">
 
 ### PromiseReturnType 原理
 

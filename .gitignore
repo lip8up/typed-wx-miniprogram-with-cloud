@@ -13,3 +13,7 @@ $RECYCLE.BIN/
 # Node.js
 node_modules/
 yarn-error.log
+
+# vscode
+.vscode
+!.vscode/settings.json

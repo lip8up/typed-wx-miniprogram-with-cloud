@@ -305,7 +305,7 @@ cloudSum(0.1, 0.2).then(sum => console.log({ sum }))
 
 你以为只有这些？看动画：
 
-<img src="assets/05-goto.png" width="100%">
+<img src="assets/05-goto.avif" width="100%">
 
 ### PromiseReturnType 原理
 
